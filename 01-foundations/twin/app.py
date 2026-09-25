@@ -55,6 +55,30 @@ if __name__ == "__main__":
 '''
 
 if __name__ == "__main__":
+    try:
+        print("Trying: css/js/theme passed to ChatInterface()")
+        gr.ChatInterface(
+            chat,
+            examples=EXAMPLES,
+            title="Digital Twin",
+            description="Talk to my AI twin about my career",
+            chatbot=gr.Chatbot(show_label=False),
+            css=CSS,
+            js=JS,
+            theme=gr.themes.Base(),
+        ).launch()
+    except Exception as e:
+        print(f"First approach failed: {e}")
+        print("Fallback: css/js/theme passed to launch()")
+        gr.ChatInterface(
+            chat,
+            examples=EXAMPLES,
+            title="Digital Twin",
+            description="Talk to my AI twin about my career",
+            chatbot=gr.Chatbot(show_label=False),
+        ).launch(css=CSS, js=JS, theme=gr.themes.Base())
+
+'''
     gr.ChatInterface(
         chat,
         examples=EXAMPLES,
@@ -65,3 +89,6 @@ if __name__ == "__main__":
         js=JS,
         theme=gr.themes.Base(),
     ).launch()
+'''
+
+
