@@ -185,3 +185,8 @@ cython_debug/
 uv.lock
 
 emails.txt
+
+.agent-env
+
+
+#conda create --prefix ./agent-env python=3.11
